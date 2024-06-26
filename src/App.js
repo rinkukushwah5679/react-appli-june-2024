@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import TextPage from './components/TextPage';
 import Alert from './components/Alert';
 import About from './components/About';
-import { BrowserRouter, Routes, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
