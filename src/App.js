@@ -4,6 +4,9 @@ import './App.css';
 import Navbar from './components/Navbar';
 import TextPage from './components/TextPage';
 import Alert from './components/Alert';
+import About from './components/About';
+import { BrowserRouter, Routes, Route, Switch, Link } from "react-router-dom";
+
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -40,9 +43,16 @@ function App() {
   }
   return (
     <>
-    <Navbar title="Rinku" mode={mode} triggerHandling={trigger}/>
-    <Alert alert={alert} />
-    <TextPage heading="This is text box" mode={mode} showAlert={showAlert} />
+    <BrowserRouter>
+      <Navbar title="Rinku" mode={mode} triggerHandling={trigger}/>
+      <Alert alert={alert} />
+      <Routes>
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/" element={<TextPage heading="This is text box" mode={mode} showAlert={showAlert} />} />
+      </Routes>
+      {/*<TextPage heading="This is text box" mode={mode} showAlert={showAlert} /> */}
+      {/*<About/> */}
+    </BrowserRouter>
     </>
   );
 }
